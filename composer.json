@@ -23,7 +23,7 @@
   "require": {
     "php": "~7.3|~7.4",
     "magento/framework": "103.0.*",
-    "dholi/module-payment": "dev-master"
+    "dholi/module-payment": "~1.0.0"
   },
   "license": [
     "OSL-3.0",
