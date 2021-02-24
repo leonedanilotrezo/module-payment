@@ -1,5 +1,5 @@
 # 1.1.0
-## xx/xx/2020
+## 26/02/2020
 
 1. [](#new)
     * Tradução para Espanhol: Argentina, Chile, Colômbia, México, Panamá e Peru.
