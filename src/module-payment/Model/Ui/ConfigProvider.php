@@ -15,24 +15,23 @@ declare(strict_types=1);
 
 namespace Dholi\Payment\Model\Ui;
 
-class ConfigProvider implements \Magento\Checkout\Model\ConfigProviderInterface {
+use Magento\Checkout\Model\ConfigProviderInterface;
+use Magento\Framework\View\Asset\Repository;
 
+class ConfigProvider implements ConfigProviderInterface {
+	
 	const CODE = 'dholi_payments';
-
+	
 	protected $assetRepo;
-	protected $urlBuilder;
-
-	public function __construct(\Magento\Framework\View\Asset\Repository $assetRepo,
-	                            \Magento\Framework\UrlInterface $urlBuilder) {
+	
+	public function __construct(Repository $assetRepo) {
 		$this->assetRepo = $assetRepo;
-		$this->urlBuilder = $urlBuilder;
 	}
-
+	
 	public function getConfig() {
 		return [
 			'payment' => [
 				self::CODE => [
-					'paymentMethodUrl' => $this->urlBuilder->getUrl('dholipayment/checkout/paymentMethod', ['_secure' => true]),
 					'icons' => [
 						'visa' => [
 							'height' => 30,
